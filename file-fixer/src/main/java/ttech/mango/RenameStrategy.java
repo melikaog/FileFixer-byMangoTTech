@@ -14,7 +14,10 @@ public abstract class RenameStrategy {
     public final void createRenamedPDF(String name, File existing){ //template method
 
         String newName = parseName(name);
-        copy(existing, new File(FileFixer.renamedAssigns.getAbsolutePath() + File.separator + newName));
+        String renamedAssigns = System.getProperty("user.dir") + File.separator + "filesToRename" + File.separator + "Renamed Assignments";
+
+        // copy(existing, new File(FileFixer.renamedAssigns.getAbsolutePath() + File.separator + newName));
+        copy(existing, new File(renamedAssigns + File.separator + newName));
         
     }
 

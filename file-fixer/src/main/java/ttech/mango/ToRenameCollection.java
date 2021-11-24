@@ -78,7 +78,7 @@ public class ToRenameCollection {
         }
         //students.remove(0);
 
-        System.out.println("NUMBER OF STUDENTS IN CSV: " + students.size());
+        // System.out.println("NUMBER OF STUDENTS IN CSV: " + students.size());
      
         return students;
     }
@@ -129,7 +129,7 @@ public class ToRenameCollection {
 
                 if(pdf.getIsRenamed()) numPDFRenamed++;
 
-                System.out.println("NumPDFS renamed: " + numPDFRenamed);
+                // System.out.println("NumPDFS renamed: " + numPDFRenamed);
 
                 // System.out.println(i + ":::  " + pdf.getName() );
             }
