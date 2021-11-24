@@ -6,7 +6,6 @@ public class Student {
     private String ID;
     private String fullName;
     private String email;
-    private Submission submission;
     //private File file;
 
     public Student(String identifier, String ID, String fullName, String email) {
@@ -39,24 +38,6 @@ public class Student {
             return true;
         return false;
     }
-
-//     public boolean setSubmission(Submission submission) {
-//         if (!hasSubmission()){
-//             this.submission = submission;
-//             return true;
-//         }
-//         return false;
-//     }
-
-//     public Submission getSubmission() {
-//         return submission;
-//     }
-
-//     public boolean hasSubmission() {
-//         if (getSubmission() == null)
-//             return false;
-//         return true;
-//     }
 
     public String toString() {
         String student = this.identifier + " " + this.fullName + " " + this.ID + " " + this.email;
