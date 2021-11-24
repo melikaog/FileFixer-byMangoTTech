@@ -31,6 +31,8 @@ public class FileFixer {
         ToRenameCollection root = new ToRenameCollection(currentDirectory,folderName,renamedFilesFolderName,noSubmissionListFileName);
         root.initFilesToRenameDir(); //unzipping
         ArrayList <Student> students = root.readCSV();
+        for( Student s: students)
+            System.out.println(s.getFullName()+"\n");
         root.processPDFs();
         root.createDidNotSubmit(students);
 

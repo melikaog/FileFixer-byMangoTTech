@@ -100,6 +100,7 @@ public class ToRenameCollection {
                 }
                 else if(file.getName().contains(".pdf")){
                     cd = new PDFFile(file.getName(), file.getParent());
+                    PDFFile pdf = (PDFFile) cd;
                 }    
                 else { //ZIP files deleted after extraction, no need to create obj
                     continue;
@@ -123,15 +124,13 @@ public class ToRenameCollection {
 
         for (Component c: toRename.getComponentsInDir()){
             
-            if(c instanceof PDFFile ){
+            if(c instanceof PDFFile){
                 PDFFile pdf = (PDFFile) c;
-                pdf.process();  
+                if(pdf.getStrategy() != null)
+                    pdf.process();  
 
-                if(pdf.getIsRenamed()) numPDFRenamed++;
-
-                // System.out.println("NumPDFS renamed: " + numPDFRenamed);
-
-                // System.out.println(i + ":::  " + pdf.getName() );
+                if(pdf.getIsRenamed()) 
+                    numPDFRenamed++;
             }
         }
 
@@ -149,7 +148,6 @@ public class ToRenameCollection {
                 
                 boolean submitted = false;
                 String identifier = s.getIdentifier();
-                
                 
                 for(File file: renamedList){
 

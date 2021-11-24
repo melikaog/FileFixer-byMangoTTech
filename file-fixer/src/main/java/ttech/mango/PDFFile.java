@@ -11,12 +11,12 @@ public class PDFFile extends FileLeaf{
     public PDFFile(String name, String parentPath){
         super(name, parentPath);
         isRenamed = false;
+        renameStrat = setRenameStrat();
         //PDDocument doc = Loader.loadPDF(new File(getPath()));
-        setRenameStrat();
     }
 
-    public void setRenameStrat(){
-        this.renameStrat = determineConvention();
+    public RenameStrategy getStrategy(){
+        return this.renameStrat;
     }
 
     public void setIsRenamed(boolean b){
@@ -27,9 +27,8 @@ public class PDFFile extends FileLeaf{
         return this.isRenamed;
     }
 
-    public RenameStrategy determineConvention(){
-        //return appropriate strategy
-
+    public RenameStrategy setRenameStrat(){
+    
         String[] parsed = getName().split("_");
         
         // if - determines if the parsed string is in convention 1
@@ -39,19 +38,18 @@ public class PDFFile extends FileLeaf{
         // else if - determines if the parsed string is in convention 2
         else if(parsed.length > 4 && parsed[2].equals("assignsubmission") && parsed[3].equals("file")){
             //System.out.print(getName() + " ALREADY exists in Renamed Assignments Folder \n\n" );
-            setIsRenamed(true);
+            return new Convention2Strat();
+        }
+        else{
+            System.out.println("Assignment '" + getName() +"' is invalid. Unable to rename. Please review.");
             return null;
         }
-        return new OriginalFileStrat(); // returns if the parsed string is in no convention
     }
 
 
     public void process() {
         
-        if(!isRenamed){
             renameStrat.createRenamedPDF(getName(), new File(getPath()));
             setIsRenamed(true);
-        }
     }
-
 }

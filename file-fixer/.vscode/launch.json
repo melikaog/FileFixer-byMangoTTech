@@ -1,5 +1,6 @@
 {
     "configurations": [
+
         {
             "type": "java",
             "name": "Launch FileFixer",
@@ -15,22 +16,4 @@
             "projectName": "file-fixer"
         }
     ]
-} // {
-//     "configurations": [
-        
-//         {
-//             "type": "java",
-//             "name": "Launch AllValidSubmissionsTest",
-//             "request": "launch",
-//             "mainClass": "ttech.mango.AllValidSubmissionsTest",
-//             "projectName": "file-fixer"
-//         },
-//         {
-//             "type": "java",
-//             "name": "Launch FileFixer",
-//             "request": "launch",
-//             "mainClass": "ttech.mango.FileFixer",
-//             "projectName": "file-fixer"
-//         }
-//     ]
-// }
+} 

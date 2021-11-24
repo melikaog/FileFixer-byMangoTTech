@@ -53,10 +53,6 @@ public class ZipReader{
                     String newDestinationPath = dir + File.separator + newName[0];
                     File newDestination = new File(newDestinationPath);
                     File testDir = new File(newDestination, newName[1]);
-
-                    //Root.toRename.addComponentToDir(extractedDir); //new
-
-                    //System.out.println("\n\n NewDestinationPath: " + testDir);
                     
                     try (FileOutputStream outputStream = new FileOutputStream(testDir)){ // newFile was the previous input argument - testDir is the new
 
@@ -69,7 +65,6 @@ public class ZipReader{
                     }
                 }
             }
-
         }
         catch(Exception e){
             System.out.println(e + " has been encountered while extracting");

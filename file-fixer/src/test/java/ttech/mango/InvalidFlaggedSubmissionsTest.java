@@ -1,19 +1,20 @@
-// Scenario 1
+// Scenario 3 - tests for the 30 valid, 19 invalid. Flags the 19 invalid
 
 package ttech.mango;
 
-// import java.io.File;
+import java.io.File;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 // import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 
 //import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 
-public class AllValidSubmissionsTest extends SetUpTest{
+public class InvalidFlaggedSubmissionsTest extends SetUpTest{
 
     @Test
-    public void runAllValidSubmissions(){
+    public void runInvalidFlaggedSubmissions(){
         // sample 3 case_i.zip file needs to be used   
 
         ToRenameCollection root = new ToRenameCollection(currentDirectory, folderName, renamedFilesFolderName, noSubmissionListFileName);
@@ -21,7 +22,7 @@ public class AllValidSubmissionsTest extends SetUpTest{
         ArrayList <Student> students = root.readCSV();
         
         int numFilesRenamed = root.processPDFs(); // the actual for the 'assert' tests -> the no. of files renamed is returned
-        int expected = 49;
+        int expected = 30;
         root.createDidNotSubmit(students);
         boolean flag = false;
 
@@ -30,7 +31,7 @@ public class AllValidSubmissionsTest extends SetUpTest{
         }
         catch(AssertionError ae){
             flag = true;
-            System.out.println("The number of files in the CSV == The number of files renamed: ");
+            System.out.println("The number of files in the CSV ** DOES NOT ** equal the number of files renamed. ");
         }
 
         if (!flag){
@@ -40,9 +41,4 @@ public class AllValidSubmissionsTest extends SetUpTest{
             System.out.println(print);
         }
     }
-
-    // public static void main(String[] args){
-    //     AllValidSubmissionsTest run = new AllValidSubmissionsTest();
-    //     run.runAllValidSubmissions();
-    // }
 }
