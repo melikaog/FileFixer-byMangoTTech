@@ -100,7 +100,6 @@ public class ToRenameCollection {
                 }
                 else if(file.getName().contains(".pdf")){
                     cd = new PDFFile(file.getName(), file.getParent());
-                    PDFFile pdf = (PDFFile) cd;
                 }    
                 else { //ZIP files deleted after extraction, no need to create obj
                     continue;

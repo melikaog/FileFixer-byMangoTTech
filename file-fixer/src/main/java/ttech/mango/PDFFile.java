@@ -38,6 +38,7 @@ public class PDFFile extends FileLeaf{
         // else if - determines if the parsed string is in convention 2
         else if(parsed.length > 4 && parsed[2].equals("assignsubmission") && parsed[3].equals("file")){
             //System.out.print(getName() + " ALREADY exists in Renamed Assignments Folder \n\n" );
+            setIsRenamed(true);
             return new Convention2Strat();
         }
         else{
@@ -49,7 +50,9 @@ public class PDFFile extends FileLeaf{
 
     public void process() {
         
+        if(!isRenamed){
             renameStrat.createRenamedPDF(getName(), new File(getPath()));
             setIsRenamed(true);
+        }
     }
 }
