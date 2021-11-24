@@ -40,23 +40,23 @@ public class Student {
         return false;
     }
 
-    public boolean setSubmission(Submission submission) {
-        if (!hasSubmission()){
-            this.submission = submission;
-            return true;
-        }
-        return false;
-    }
+//     public boolean setSubmission(Submission submission) {
+//         if (!hasSubmission()){
+//             this.submission = submission;
+//             return true;
+//         }
+//         return false;
+//     }
 
-    public Submission getSubmission() {
-        return submission;
-    }
+//     public Submission getSubmission() {
+//         return submission;
+//     }
 
-    public boolean hasSubmission() {
-        if (getSubmission() == null)
-            return false;
-        return true;
-    }
+//     public boolean hasSubmission() {
+//         if (getSubmission() == null)
+//             return false;
+//         return true;
+//     }
 
     public String toString() {
         String student = this.identifier + " " + this.fullName + " " + this.ID + " " + this.email;
