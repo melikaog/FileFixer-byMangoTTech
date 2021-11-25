@@ -1,0 +1,26 @@
+-classpath
+'C:/Users/User/.m2/repository/org/apache/pdfbox/pdfbox/2.0.24/pdfbox-2.0.24.jar;C:/Users/User/.m2/repository/org/apache/pdfbox/fontbox/2.0.24/fontbox-2.0.24.jar;C:/Users/User/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.7'
+-sourcepath
+'C:/Users/User/Desktop/FileFixer-byMangoTTech-main/FileFixer-byMangoTTech-main/file-fixer/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/User/Desktop/FileFixer-byMangoTTech-main/FileFixer-byMangoTTech-main/file-fixer/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'file-fixer 1.0 API'
+-linkoffline
+'https://docs.oracle.com/javase/7/docs/api' 'C:/Users/User/Desktop/FileFixer-byMangoTTech-main/FileFixer-byMangoTTech-main/file-fixer/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'file-fixer 1.0 API'
