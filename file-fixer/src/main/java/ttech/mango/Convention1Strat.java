@@ -2,7 +2,7 @@ package ttech.mango;
 
 public class Convention1Strat extends RenameStrategy{
 
-    public String parseName(String pdfName){
+    protected String parseName(String pdfName){
         
         String[] parsed = pdfName.split("_");
 
